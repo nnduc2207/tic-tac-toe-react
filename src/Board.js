@@ -18,12 +18,12 @@ class Board extends Component {
         
         return (
           <div>
-            {[...Array(3).keys()].map(i =>
+            {[...Array(this.props.size).keys()].map(i =>
               {return(
                 <div className="board-row" key={i}>
-                    {[...Array(3).keys()].map(j => {
+                    {[...Array(this.props.size).keys()].map(j => {
                       return(
-                        this.renderSquare(i*3+j)
+                        this.renderSquare(i*this.props.size+j)
                       )
                     })}
                 </div>

@@ -56,3 +56,16 @@ body {
   .highlight{
     color: red;
   }
+
+  .input {
+    background: #fff;
+    border: 1px solid #999;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 34px;
+    margin: 20px;
+    padding: 0;
+    text-align: center;
+    width: 400px;
+  }
