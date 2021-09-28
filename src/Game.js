@@ -50,14 +50,12 @@ class Game extends Component {
     newHistory.splice(step-1, 1)
     newHistory.splice(step,0,history[step-1])
 
-    // Change squares
-    newHistory[step-1].squares = [...newHistory[step-2].squares]
-    newHistory[step-1].squares[newHistory[step-1].location.row * 3 + newHistory[step-1].location.col] = (step - 1) % 2 ? 'X' : 'O'
-    newHistory[step].squares = [...newHistory[step-1].squares]
-    newHistory[step].squares[newHistory[step].location.row * 3 + newHistory[step].location.col] = step % 2 ? 'X' : 'O'
-
-    //Check winner
     for (let i = step - 1; i < newHistory.length; i++) {
+      // Change squares
+      newHistory[i].squares = [...newHistory[i-1].squares]
+      newHistory[i].squares[newHistory[i].location.row * 3 + newHistory[i].location.col] = i % 2 ? 'X' : 'O'
+
+      //Check winner
       const winner = calculateWinner(newHistory[i].squares)
       if (winner) {
         newHistory.splice(i+1)
